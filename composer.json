@@ -9,6 +9,7 @@
             "email": "office@nikba.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
         "c14r/directus-api": "^1.0",
         "mikecao/flight": "^1.3",
