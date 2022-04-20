@@ -1,0 +1,57 @@
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+#Libwww-perl Access
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.* 
+RewriteRule .* ? [F,L]
+
+#Deflate text, html, javascript, css, xml:
+<ifModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+</ifModule>
+
+#Cache Expire
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault "access 7 days"
+	ExpiresByType text/css "access plus 1 year"
+	ExpiresByType application/javascript "access plus 1 year"
+	ExpiresByType text/javascript "access plus 1 year"
+	ExpiresByType text/html "access plus 7 day"
+	ExpiresByType text/x-javascript "access 1 year"
+	ExpiresByType image/gif "access plus 1 year"
+	ExpiresByType image/jpeg "access plus 1 year"
+	ExpiresByType image/png "access plus 1 year"
+	ExpiresByType image/jpg "access plus 1 year"
+	ExpiresByType image/x-icon "access 1 year"
+	ExpiresByType application/x-shockwave-flash "access 1 year"
+</IfModule>
+
+# Cache-Control
+<ifModule mod_headers.c>
+	# 30 days
+	<filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf)$">
+		Header set Cache-Control "max-age=2592000, public"
+	</filesMatch>
+	
+	# 30 days
+	<filesMatch "\.(css|js)$">
+		Header set Cache-Control "max-age=2592000, public"
+	</filesMatch>
+	
+	# 2 days
+	<filesMatch "\.(xml|txt)$">
+		Header set Cache-Control "max-age=172800, public, must-revalidate"
+	</filesMatch>
+	
+	# 1 day
+	<filesMatch "\.(html|htm|php)$">
+		Header set Cache-Control "max-age=172800, private, must-revalidate"
+	</filesMatch>
+</ifModule>
+
+Options -Indexes

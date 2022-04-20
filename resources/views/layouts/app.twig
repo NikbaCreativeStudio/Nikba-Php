@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="Nikba Creative Studio">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <meta name="description" content="{% block description %}{% endblock %}">
+
+         <meta property="og:title" content="{% block fb_title %}{% endblock %}" />
+         <meta property="og:image" content="{% block fb_image %}{% endblock %}" />
+         <meta property="og:type" content="article" />
+         
+         <meta property="og:url" content="{% block fb_url %}{% endblock %}" />
+         <meta property="og:site_name" content="" />
+         <meta property="og:description" content="{% block fb_description %}{% endblock %}" />
+
+         <link rel="shortcut icon" href="/assets/images/favicon.webp">
+         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.webp">
+         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.webp">
+         <link rel="apple-touch-icon-precomposed" href="/assets/images/apple-touch-icon-57x57.webp">
+        
+         <title>{% block title %}{% endblock %}</title>
+         <link rel="stylesheet" type="text/css" href="/assets/css/style.min.css" />
+    {% endblock %}
+</head>
+<body data-mobile-nav-style="classic">
+
+
+     {% block header %}
+        {{ include('sections/header.twig') }}
+     {% endblock %}
+
+     {% block content %}{% endblock %}
+
+     {% block footer %}
+        {{ include('sections/footer.twig') }}
+     {% endblock %}
+     
+     {% block scripts %}
+        {{ include('sections/scripts.twig') }}
+     {% endblock %}
+</body>
+</html>

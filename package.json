@@ -1,0 +1,44 @@
+{
+  "name": "nikba-php",
+  "version": "1.0.0",
+  "description": "Gulp Automatization for Nikba Php Front End Template",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikbaCreativeStudio/Nikba-Php.git"
+  },
+  "author": "Nikba Creative Studio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikbaCreativeStudio/Nikba-Php/issues"
+  },
+  "homepage": "https://github.com/NikbaCreativeStudio/Nikba-Php#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "browser-sync": "^2.27.4",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-cssbeautify": "^3.0.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.3",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^5.0.0",
+    "gulp-strip-css-comments": "^2.0.0",
+    "gulp-svgmin": "^4.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "gulp-webp": "^4.0.1",
+    "sass": "^1.35.2"
+  }
+}
