@@ -39,7 +39,7 @@ All Files are generated in public/assets/
 * Fonts - *.*
 
 ### Docker
-For better experience try to use Docker Apache + Apache
+For better experience try to use Docker Apache + Php
   ```sh
   docker-compose up -d
   ```
