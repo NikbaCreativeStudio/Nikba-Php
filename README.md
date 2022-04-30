@@ -37,3 +37,9 @@ All Files are generated in public/assets/
 * Images - imagemin, webp - *.webp
 * SVG - svgmin - *svg
 * Fonts - *.*
+
+### Docker
+For better experience try to use Docker Apache + Apache
+  ```sh
+  docker-compose up -d
+  ```
