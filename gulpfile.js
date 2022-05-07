@@ -29,7 +29,7 @@ const browsersync = require("browser-sync").create(); // Local server with live 
 
 // Paths
 let path = {
-    proxy: "https://demo.site.com/",
+    proxy: "http://localhost/",
     build: {
         js: "./public/assets/js/",
         css: "./public/assets/css/",
